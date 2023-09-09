@@ -5,12 +5,8 @@ public class LinkedList {
 
     public void addInHead(int data) {
         Node node = new Node(data);
-        if (head == null) {
-            head = node;
-        } else {
-            node.next = head;
-            head = node;
-        }
+        node.next = head;
+        head = node;
     }
 
     public void addInTail(int data) {
