@@ -23,7 +23,7 @@ public class ReverseLinkedList {
         linkedList.addInHead(5);
         linkedList.addInHead(7);
         linkedList.addInHead(8);
-        linkedList.addInHead(9);
+        //linkedList.addInHead(9);
         linkedList.printList(linkedList.head);
         System.out.println();
         linkedList.printList(reverse(linkedList.head));

@@ -28,12 +28,17 @@ public class MergeInterval {
                 }
             }
         }
+
+
+   /*
         // Convert the List<int[]> to int[][]
         int[][] mergedIntervals = new int[list.size()][2];
         for (int i = 0; i < list.size(); i++) {
             mergedIntervals[i] = list.get(i);
         }
-        return mergedIntervals;
+
+    */
+        return list.toArray(new int[list.size()][]);
 
     }
 

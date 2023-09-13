@@ -1,7 +1,7 @@
 package linkedList;
 
 public class Node {
-    int data;
+    Integer data;
     Node next;
     Node(int data) {
         this.data = data;
