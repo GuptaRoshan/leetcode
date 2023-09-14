@@ -5,7 +5,7 @@ class NumArray {
 
     public NumArray(int[] nums) {
         prefixSum = nums;
-        for (int i = 0; i < prefixSum.length; i++) {
+        for (int i = 1; i < prefixSum.length; i++) {
             prefixSum[i] += prefixSum[i - 1];
         }
     }
