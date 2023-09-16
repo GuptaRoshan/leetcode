@@ -21,7 +21,7 @@ public class IslandMatrixDFS {
         if (row < grid.length && row >= 0 && col < grid[row].length && col >= 0 && grid[row][col] == '1') {
             grid[row][col] = '0';
             DFS(row, col+1, grid);
-            DFS(row, col+1, grid);
+            DFS(row, col-1, grid);
             DFS(row+1, col, grid);
             DFS(row-1, col, grid);
         }

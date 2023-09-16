@@ -36,6 +36,7 @@ public class BinarySearch {
         } else {
             return searchRecursive(nums, target, mid - 1, high);
         }
+
     }
 
     public static int searchOptimized(int[] nums, int target) {
