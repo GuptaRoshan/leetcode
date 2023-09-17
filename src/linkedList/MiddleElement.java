@@ -1,9 +1,9 @@
 package linkedList;
 
 public class MiddleElement {
-    public static int middle(Node root) {
-        Node fast = root;
-        Node slow = root;
+    public static int middle(Node head) {
+        Node fast = head;
+        Node slow = head;
         while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;

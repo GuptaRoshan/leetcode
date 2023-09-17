@@ -1,9 +1,9 @@
 package linkedList;
 
 public class CycleDetection {
-    public static Boolean cycle(Node root) {
-        Node fast = root;
-        Node slow = root;
+    public static Boolean cycle(Node head) {
+        Node fast = head;
+        Node slow = head;
         while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
@@ -14,13 +14,13 @@ public class CycleDetection {
         return false;
     }
 
-    public static Boolean cycleSinglePointer(Node root) {
-        while (root != null) {
-            if (root.data == null) {
+    public static Boolean cycleSinglePointer(Node head) {
+        while (head != null) {
+            if (head.data == null) {
                 return true;
             }
-            root.data = null;
-            root = root.next;
+            head.data = null;
+            head = head.next;
         }
         return false;
     }

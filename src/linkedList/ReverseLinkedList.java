@@ -1,10 +1,10 @@
 package linkedList;
 
 public class ReverseLinkedList {
-    public static Node reverse(Node root) {
-        if (root != null) {
+    public static Node reverse(Node head) {
+        if (head != null) {
             Node previous = null;
-            Node current = root;
+            Node current = head;
             Node next = null;
             while (current != null) {
                 next = current.next;
