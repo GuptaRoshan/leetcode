@@ -10,17 +10,8 @@ public class MergeTree {
         Queue<TreeNode> pq = new LinkedList<>();
         Queue<TreeNode> qq = new LinkedList<>();
 
-        if (p == null) {
-            return q;
-        }
-        if (q == null) {
-            return p;
-        }
-
-        if (q != null && q != null) {
-            pq.add(p);
-            qq.add(q);
-        }
+        pq.add(p);
+        qq.add(q);
 
         while (!pq.isEmpty() && !qq.isEmpty()) {
             TreeNode pCurr = pq.poll();
@@ -49,8 +40,8 @@ public class MergeTree {
 
 
     public static TreeNode mergeTreeDFS(TreeNode root1, TreeNode root2) {
-        if(root1 == null && root2 == null) return null;
-        if(root1 == null ) return root2;
+        if (root1 == null && root2 == null) return null;
+        if (root1 == null) return root2;
 
         root1.val = root1.val + root2.val;
         root1.left = mergeTreeDFS(root1.left, root2.left);

@@ -9,7 +9,8 @@ public class PathSum {
 
         if ( root.left == null && root.right == null) {
 
-            // the remaining value in target is equal current node value.
+            // the remaining value in target is equal current node value. or
+            // it can be  targetSum == 0
             return targetSum == root.val;
         }
 
