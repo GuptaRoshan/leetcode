@@ -7,6 +7,8 @@ import java.util.Queue;
 
 public class AverageLevelsOfBinaryTree {
 
+
+
     public static List<Double> averageOfLevels(TreeNode root) {
         List<Double> average = new ArrayList<>();
         Queue<TreeNode> queue = new LinkedList<>();
@@ -15,7 +17,7 @@ public class AverageLevelsOfBinaryTree {
             int n = queue.size();
             double sum = 0;
 
-            for (int i = 0; i < n; i++ ){
+            for (int i = 0; i < n; i++) {
                 TreeNode currentNode = queue.poll();
                 sum += currentNode.val;
 
@@ -27,10 +29,24 @@ public class AverageLevelsOfBinaryTree {
                 }
             }
 
-            average.add((sum/n));
+            average.add((sum / n));
         }
 
         return average;
+    }
+
+
+
+    public static List<String> paths(TreeNode root, String path, List<String> list) {
+
+        if (root.left == null && root.right == null) {
+            list.add(path + root.val);
+        }
+
+        if (root.left != null) paths(root.left, path + root.val + "->" , list);
+        if (root.right != null) paths(root.right,path +  root.val + "->", list);
+
+        return list;
     }
 
 
@@ -43,16 +59,19 @@ public class AverageLevelsOfBinaryTree {
         treeNodeLevel2Right.left = new TreeNode(15);
         treeNodeLevel2Right.right = new TreeNode(7);
 
+        //averageOfLevels(treeNodeLevel1Root);
+        List<String> list = new ArrayList<>();
+        paths(treeNodeLevel1Root, "", list);
         averageOfLevels(treeNodeLevel1Root);
 
 
         /*********************************
-                        3
-                      /   \
-                     9    20
-                         /  \
-                        15   7
-        **********************************/
+         3
+         /   \
+         9    20
+         /  \
+         15   7
+         **********************************/
 
 
     }
