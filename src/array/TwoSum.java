@@ -27,4 +27,5 @@ public class TwoSum {
         int target = 17;
         System.out.println(twoSum(nums, target));
     }
+
 }

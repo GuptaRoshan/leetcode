@@ -30,8 +30,6 @@ public class Trie {
         temp.isEndOfWord = true;
     }
 
-
-
     static boolean search(String key) {
         TrieNode temp = root;
         for (int i = 0; i < key.length(); i++) {
@@ -41,9 +39,7 @@ public class Trie {
             }
             temp = temp.children[index];
         }
-
         return temp.isEndOfWord;
-
     }
 
     public static void main(String[] args) {
@@ -54,7 +50,5 @@ public class Trie {
         insert("cat");
         System.out.println(search("cat"));
     }
-
-
 
 }

@@ -18,20 +18,20 @@ public class IslandMatrixDFS {
     }
 
     public static void DFS(int row, int col, char[][] grid) {
-        if (row < grid.length && row >= 0 && col < grid[row].length && col >= 0 && grid[row][col] == '1') {
+        if (row < grid.length && col < grid[0].length && row >= 0 && col >= 0 && grid[row][col] == '1') {
             grid[row][col] = '0';
-            DFS(row, col+1, grid);
-            DFS(row, col-1, grid);
-            DFS(row+1, col, grid);
-            DFS(row-1, col, grid);
+            DFS(row, col + 1, grid);
+            DFS(row, col - 1, grid);
+            DFS(row + 1, col, grid);
+            DFS(row - 1, col, grid);
         }
     }
 
     public static void main(String[] args) {
-        char[][] grid = {{'1', '1', '1', '1', '0'},
-                         {'1', '1', '0', '1', '0'},
-                         {'1', '1', '0', '0', '0'},
-                         {'0', '0', '0', '0', '0'}};
+        char[][] grid = { {'1', '1', '1', '1', '0'},
+                          {'1', '1', '0', '1', '0'},
+                          {'1', '1', '0', '0', '0'},
+                          {'0', '0', '0', '0', '0'} };
 
         System.out.println(numIslands(grid));
 
