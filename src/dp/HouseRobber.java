@@ -23,23 +23,37 @@ public class HouseRobber {
         return result;
     }
 
-    public static int maxSubArray(int[] A) {
-        int n = A.length;
-        int[] dp = new int[n];
-        dp[0] = A[0];
-        int max = dp[0];
+    public static int robIterative(int[] num) {
 
-        for (int i = 1; i < n; i++) {
-            dp[i] = Math.max(A[i] + dp[i - 1] , A[i]);
-            max = Math.max(max, dp[i]);
+        if (num.length == 0) {
+            return 0;
         }
 
-        return max;
+        int len = num.length + 1;
+        int[] dp = new int[len];
+        dp[0] = 0;
+        dp[1] = num[0];
+
+        for (int i = 2; i < len; i++) {
+            int currLoot = num[i - 1];
+            dp[i] = Math.max(dp[i - 2] + currLoot, dp[i - 1]);
+        }
+
+        return dp[dp.length - 1];
     }
 
+    public static int rob2Helper(int[] num) {
+        int val0 = num[0];
+        num[0] = 0;
+        int max1 = robIterative(num);
+        num[0] = val0;
+        num[num.length - 1] = 0;
+        int max2 = robIterative(num);
+        return Math.max(max1, max2);
+    }
 
     public static void main(String[] args) {
-        int[] nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
-        System.out.println(maxSubArray(nums));
+        int[] nums = {2, 7, 9, 3, 1};
+        System.out.println(rob2Helper(nums));
     }
 }
