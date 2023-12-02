@@ -20,8 +20,7 @@ public class Permutations2 {
         }
 
         for (int i = 0; i < nums.length; i++) {
-            if (used[i] || i > 0 && nums[i] == nums[i - 1] && !used[i - 1])
-                continue; // to skip duplicates
+            if (used[i] || i > 0 && !used[i - 1] && nums[i] == nums[i - 1]) continue; // to skip duplicates
 
             used[i] = true;
             list.add(nums[i]);
