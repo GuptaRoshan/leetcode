@@ -1,5 +1,7 @@
 package dp;
 
+import java.util.Arrays;
+
 public class UniquePaths {
 
     public static int uniquePaths(int m, int n) {
@@ -25,11 +27,23 @@ public class UniquePaths {
         return dp[m - 1][n - 1];
     }
 
+   static int  uniquePaths_oneArray(int m, int n) {
+        int[] curr = new int[n];
+        Arrays.fill(curr, 1);
+
+        for (int i = 1; i < m; i++) {
+            for (int j = 1; j < n; j++) {
+                curr[j] += curr[j - 1];
+            }
+        }
+        return curr[n - 1];
+    }
+
     public static void main(String[] args) {
         int m = 3;
         int n = 7;
 
-        int paths = uniquePaths(m, n);
+        int paths = uniquePaths_oneArray(m, n);
         System.out.println("Number of unique paths: " + paths);
     }
 
