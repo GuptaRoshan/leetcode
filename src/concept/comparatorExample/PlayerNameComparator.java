@@ -1,4 +1,4 @@
-package concept.comp;
+package concept.comparatorExample;
 
 import java.util.Comparator;
 

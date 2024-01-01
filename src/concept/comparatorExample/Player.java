@@ -1,4 +1,4 @@
-package concept.comp;
+package concept.comparatorExample;
 
 public class Player implements Comparable<Player>{
 

@@ -2,7 +2,7 @@ package trie;
 
 import java.util.Arrays;
 
-public class Trie {
+public class TrieWithStatic {
     static final int SIZE = 26;
     static TrieNode root;
 

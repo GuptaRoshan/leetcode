@@ -29,8 +29,8 @@ public class PQ {
     public static void customHeap() {
         int[][] array = {{1, 2}, {1, 3}, {2, 4}, {1, 1}};
         //final PriorityQueue<int[]> pq = new PriorityQueue<>(Comparator.comparingInt(a -> a[0] + a[1]));
-
-        final PriorityQueue<int[]> pq = new PriorityQueue<>((a, b) -> Integer.compare( b[0] + b[1],  a[0] + a[1]));
+        PriorityQueue<int[]> pq = new PriorityQueue<>((a, b) -> b[1] - a[1]);
+        //PriorityQueue<int[]> pq = new PriorityQueue<>((a, b) -> Integer.compare( b[0] + b[1],  a[0] + a[1]));
 
         Collections.addAll(pq, array);
 

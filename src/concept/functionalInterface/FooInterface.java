@@ -8,6 +8,8 @@ public interface FooInterface {
     default String defaultName(){
         return "Jack";
     }
-
+    default String defaultTitle(){
+        return "Mr.";
+    }
 
 }

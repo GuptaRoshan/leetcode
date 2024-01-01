@@ -17,7 +17,6 @@ public class MiddleElement {
         linkedList.addInTail(5);
         linkedList.addInTail(7);
         linkedList.addInTail(8);
-        linkedList.addInTail(9);
         linkedList.printList(linkedList.head);
         System.out.println();
         System.out.println("Middle element : " + middle(linkedList.head));

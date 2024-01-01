@@ -17,15 +17,30 @@ public class ReverseLinkedList {
         return null;
     }
 
+    public static Node recursiveReverse(Node head) {
+        // Base case: if the list is empty or has only one node
+        if (head == null || head.next == null) {
+            return head;
+        }
+
+        // Recursive step: reverse the rest of the list
+        Node newHead = recursiveReverse(head.next);
+
+        // Make adjustments to reverse the current pair of nodes
+        head.next.next = head;
+        head.next = null;
+
+        // Return the new head of the reversed list
+        return newHead;
+    }
+
     public static void main(String[] args) {
         LinkedList linkedList = new LinkedList();
-        linkedList.addInHead(2);
-        linkedList.addInHead(5);
-        linkedList.addInHead(7);
-        linkedList.addInHead(8);
-        //linkedList.addInHead(9);
+        linkedList.addInTail(2);
+        linkedList.addInTail(5);
+        linkedList.addInTail(7);
         linkedList.printList(linkedList.head);
         System.out.println();
-        linkedList.printList(reverse(linkedList.head));
+        linkedList.printList(recursiveReverse(linkedList.head));
     }
 }
