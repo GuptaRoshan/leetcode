@@ -1,23 +1,16 @@
-package trie;
+package systemDesign;
 
 import java.util.Arrays;
 
-public class TrieWithStatic {
+public class Trie {
     static final int SIZE = 26;
     static TrieNode root;
 
-
-    static class TrieNode {
-        TrieNode[] children = new TrieNode[SIZE];
-        Boolean isEndOfWord;
-
-        public TrieNode() {
-            Arrays.fill(children, null);
-            isEndOfWord = false;
-        }
+    public Trie() {
+        root = new TrieNode();
     }
 
-    static void insert(String key) {
+    public void insert(String key) {
         TrieNode temp = root;
         for (int i = 0; i < key.length(); i++) {
             int index = key.charAt(i) - 'a';
@@ -26,11 +19,10 @@ public class TrieWithStatic {
             }
             temp = temp.children[index];
         }
-
         temp.isEndOfWord = true;
     }
 
-    static boolean search(String key) {
+    public boolean search(String key) {
         TrieNode temp = root;
         for (int i = 0; i < key.length(); i++) {
             int index = key.charAt(i) - 'a';
@@ -42,13 +34,24 @@ public class TrieWithStatic {
         return temp.isEndOfWord;
     }
 
-    public static void main(String[] args) {
-        root = new TrieNode();
-        insert("apple");
-        insert("ball");
-        insert("app");
-        insert("cat");
-        System.out.println(search("cat"));
-    }
+    static class TrieNode {
+        TrieNode[] children = new TrieNode[SIZE];
+        Boolean isEndOfWord;
 
+        public TrieNode() {
+            Arrays.fill(children, null);
+            isEndOfWord = false;
+        }
+    }
+}
+
+class TrieTest {
+    public static void main(String[] args) {
+        Trie trie = new Trie();
+        trie.insert("apple");
+        trie.insert("ball");
+        trie.insert("app");
+        trie.insert("cat");
+        trie.search("balls");
+    }
 }
