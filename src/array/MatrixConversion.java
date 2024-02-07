@@ -7,22 +7,19 @@ public class MatrixConversion {
         int n = arr[0].length;
         int[] oneMatrix = new int[m * n];
 
-        for (int row = 0; row < m; row++) {
-            //oneMatrix[row * m + col] = arr[row][col];
-            System.arraycopy(arr[row], 0, oneMatrix, row * m + 0, m);
-        }
+        for (int row = 0; row < m; row++)
+            for(int col = 0; col < n; col++)
+                oneMatrix[row * m + col] = arr[row][col];
     }
 
     public static void convert1DTo2DMatrix(int[] arr) {
         int m = 2;
         int n = arr.length;
-        int[][] twoMatrix = new int[m][m];
 
+        int[][] twoMatrix = new int[m][m];
         for (int i = 0; i < n; i++) {
-            System.out.println(i / m);
             twoMatrix[i / m][i % m] = arr[i];
         }
-
     }
 
     public static void main(String[] args) {

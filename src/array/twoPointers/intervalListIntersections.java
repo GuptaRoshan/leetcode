@@ -1,6 +1,7 @@
 package array.twoPointers;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class intervalListIntersections {
@@ -43,6 +44,6 @@ public class intervalListIntersections {
     public static void main(String[] args) {
         int[][] firstList = {{0, 2}, {5, 10}, {13, 23}, {24, 25}};
         int[][] secondList = {{1, 5}, {8, 12}, {15, 24}, {25, 26}};
-        System.out.println(intervalIntersection(firstList, secondList));
+        System.out.println(Arrays.deepToString(intervalIntersection(firstList, secondList)));
     }
 }
