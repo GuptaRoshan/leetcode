@@ -6,7 +6,6 @@ public class TrappingRainWater {
         int totalCount = 0;
 
         for (int i = 1; i < height.length; i++) {
-
             int leftMax = 0;
             for (int j = 0; j < i; j++) {
                 leftMax = Math.max(leftMax, height[j]);
@@ -18,9 +17,7 @@ public class TrappingRainWater {
             }
 
             int temp = Math.min(leftMax, rightMax) - height[i];
-
             totalCount = totalCount + (Math.max(temp, 0));
-
         }
 
         return totalCount;
@@ -34,18 +31,13 @@ public class TrappingRainWater {
         int totalCount = 0;
 
         while (left < right) {
-
             leftMax = Math.max(leftMax, height[left]);
             rightMax = Math.max(rightMax, height[right]);
-
             if (leftMax < rightMax) {
                 totalCount += (leftMax - height[left++]);
-
             } else {
                 totalCount += (rightMax - height[right--]);
             }
-
-
         }
 
         return totalCount;
