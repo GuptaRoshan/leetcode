@@ -5,7 +5,6 @@ import java.util.*;
 public class ReverseLevelOrder {
 
     public static List<List<Integer>> levelOrderBottom(TreeNode root) {
-
         Queue<TreeNode> queue = new LinkedList<>();
         Stack<List<Integer>> stack = new Stack<>();
         List<List<Integer>> result = new ArrayList<>();

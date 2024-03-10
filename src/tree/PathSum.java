@@ -6,14 +6,9 @@ public class PathSum {
         if (root == null) {
             return false;
         }
-
-        if ( root.left == null && root.right == null) {
-
-            // the remaining value in target is equal current node value. or
-            // it can be  targetSum == 0
+        if (root.left == null && root.right == null) {
             return targetSum == root.val;
         }
-
         return hasPathSum(root.left, targetSum - root.val) || hasPathSum(root.right, targetSum - root.val);
     }
 

@@ -11,13 +11,11 @@ public class binarySearchTree {
             TreeNode treeNode = new TreeNode(val);
             return treeNode;
         }
-
         if (val < root.val) {
             root.left = insert(root.left, val);
         } else if (val > root.val) {
             root.right = insert(root.right, val);
         }
-
         return root;
     }
 
@@ -34,17 +32,13 @@ public class binarySearchTree {
             if (root.left == null) {
                 return root.right;
             }
-
             if (root.right == null) {
                 return root.left;
             }
-
             TreeNode successorNode = findSuccessor(root.right);
             root.val = successorNode.val;
-
             root.right = delete(root.right, root.val);
         }
-
 
         return root;
     }
