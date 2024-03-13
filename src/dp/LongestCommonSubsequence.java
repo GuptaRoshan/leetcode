@@ -2,12 +2,11 @@ package dp;
 
 public class LongestCommonSubsequence {
 
+    // Video Link : https://www.youtube.com/watch?v=e9tUPwZZSBI&ab_channel=NikhilLohia
     public static int findLCSLength(String str1, String str2) {
         int m = str1.length();
         int n = str2.length();
-
         int[][] dp = new int[m + 1][n + 1];
-
         // Build the DP table
         for (int i = 0; i <= m; i++) {
             for (int j = 0; j <= n; j++) {
@@ -22,15 +21,14 @@ public class LongestCommonSubsequence {
                 }
             }
         }
-
         return dp[m][n];
     }
 
     public static void main(String[] args) {
+        //output should be 4 (BDAB)
         String str1 = "ABCBDAB";
         String str2 = "BDCAB";
-
-        int lcsLength = findLCSLength(str1, str2);
-        System.out.println("Length of Longest Common Subsequence: " + lcsLength);
+        int length = findLCSLength(str1, str2);
+        System.out.println("Length of Longest Common Subsequence: " + length);
     }
 }

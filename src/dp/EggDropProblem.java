@@ -31,7 +31,6 @@ public class EggDropProblem {
     public static void main(String[] args) {
         int eggs = 2;
         int floors = 10;
-
         int minAttempts = eggDrop(eggs, floors);
         System.out.println("Minimum attempts needed: " + minAttempts);
     }

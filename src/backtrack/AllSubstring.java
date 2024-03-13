@@ -37,9 +37,9 @@ public class AllSubstring {
 
 
     public static void main(String[] args) {
-        String input = "abc";
+        String input = "abcd";
         //findAllSubstrings_Recursion(input);
-        findSubstrings(input, 0, "");
+        printSubstrings(input);
         //printSubstrings(input);
     }
 

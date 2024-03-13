@@ -6,9 +6,10 @@ public class LongestPalindromicSubstring {
 
     static String longestPalindrome(String s) {
         if (s.length() < 2) return s;
-
         for (int i = 0; i < s.length() - 1; i++) {
+            // This is for odd length palindrome
             extendPalindrome(s, i, i);
+            // This is for even length palindrome
             extendPalindrome(s, i, i + 1);
         }
         return s.substring(low, low + high);
@@ -27,7 +28,7 @@ public class LongestPalindromicSubstring {
 
 
     public static void main(String[] args) {
-        String s = "babad";
+        String s = "bab";
         System.out.println(longestPalindrome(s));
     }
 

@@ -80,10 +80,8 @@ public class BinarySearch {
 
         while (low < high) { // notice we do not compare element at mid with our target
             int mid = low + (high - low) / 2;
-            if (nums[mid] >= target)
-                high = mid;
-            else
-                low = mid + 1;
+            if (nums[mid] >= target) high = mid;
+            else low = mid + 1;
         }
 
 		 /* at this point our search space has shrinked to
@@ -101,10 +99,8 @@ public class BinarySearch {
 
         while (low < high) { // notice we do not compare element at mid with our target
             int mid = low + (high - low + 1) / 2;
-            if (nums[mid] <= target)
-                low = mid;
-            else
-                high = mid - 1;
+            if (nums[mid] <= target) low = mid;
+            else high = mid - 1;
         }
 
         /* at this point our search space has shrinked to
@@ -112,6 +108,22 @@ public class BinarySearch {
 		then return its index else we can safely assume that element was not found*/
 
         return nums[low] == target ? low : -1;  // low == high
+    }
+
+    // To find smallest element in binary search
+    static public int smallestElementBinarySearch(int[] nums) {
+        int low = 0;
+        int high = nums.length - 1;
+
+        while (low < high) {
+            int mid = low + (high - low) / 2;
+            if (nums[mid] <= nums[high]) {
+                high = mid;
+            } else {
+                low = mid + 1;
+            }
+        }
+        return low;
     }
 
 
