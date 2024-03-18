@@ -43,13 +43,16 @@ public class Trie {
         }
         return true;
     }
+
+    public boolean endsWith(String suffix) {
+        return true;
+    }
 }
 
-
-class Test {
+class TestTrie {
     public static void main(String[] args) {
         Trie trie = new Trie();
-        trie.insert("apple");
+        trie.insert("cat");
         System.out.println(trie.search("apple"));
         System.out.println(trie.startsWith("app"));
     }

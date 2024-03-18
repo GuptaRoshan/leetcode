@@ -1,0 +1,18 @@
+Total prefix and suffix of apple
+
+Prefix : start from first and exclude last element
+
+1. "apple"
+2. "a"
+3. "ap"
+4. "app"
+5. "appl"
+
+
+Suffix : start from last exclude first element
+
+1. "apple"
+2. "e"
+3. "le"
+4. "ple"
+5. "pple"

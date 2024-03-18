@@ -1,5 +1,6 @@
 package dp;
 
+// Different problems : https://leetcode.com/discuss/study-guide/4861127/LCS-and-its-patterns-(10-similar-question)
 public class LongestCommonSubsequence {
 
     // Video Link : https://www.youtube.com/watch?v=e9tUPwZZSBI&ab_channel=NikhilLohia

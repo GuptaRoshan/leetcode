@@ -21,6 +21,7 @@ public class Permutations {
             if (list.contains(nums[i])) continue;
             list.add(nums[i]);
             backtrack(nums, list, result);
+            // We need to pop to maintain the state of recursion tree.
             list.remove(list.size() - 1);
         }
 

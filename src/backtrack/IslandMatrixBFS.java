@@ -5,6 +5,14 @@ import java.util.Queue;
 
 public class IslandMatrixBFS {
 
+    public static void main(String[] args) {
+        char[][] grid = {{'1', '1', '1', '1', '0'}, {'1', '1', '0', '1', '0'}, {'1', '1', '0', '0', '0'}, {'0', '0', '0', '0', '0'}};
+
+
+        IslandMatrixBFS islandMatrixBFS = new IslandMatrixBFS();
+        System.out.println(islandMatrixBFS.numIslands(grid));
+    }
+
     public int numIslands(char[][] grid) {
         int row = grid.length;
         int col = grid[0].length;
@@ -33,32 +41,15 @@ public class IslandMatrixBFS {
                 int row = pair.getKey() + dir[0];
                 int col = pair.getValue() + dir[1];
 
-                    if (row >= 0 && col >= 0
-                            && row<grid.length
-                            && col<grid[0].length
-                            && grid[row][col] == '1'
-                            && !(visited[row][col] == '0')) {
-
-                        visited[row][col] = '0';
-                        queue.add(new Pair(row, col));
-                    }
+                if (row >= 0 && col >= 0 && row < grid.length && col < grid[0].length && grid[row][col] == '1' && !(visited[row][col] == '0')) {
+                    visited[row][col] = '0';
+                    queue.add(new Pair(row, col));
+                }
 
             }
         }
+
     }
-
-    public static void main(String[] args) {
-        char[][] grid = {{'1', '1', '1', '1', '0'},
-                {'1', '1', '0', '1', '0'},
-                {'1', '1', '0', '0', '0'},
-                {'0', '0', '0', '0', '0'}};
-
-
-        IslandMatrixBFS islandMatrixBFS = new IslandMatrixBFS();
-        System.out.println(islandMatrixBFS.numIslands(grid));
-    }
-
-
 
     public class Pair {
         private int key;

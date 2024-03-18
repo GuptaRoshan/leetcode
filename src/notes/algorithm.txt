@@ -1,0 +1,37 @@
+Trie Problem Analysis
+
+1. Word Squares given
+
+input: ["area","lead","wall","lady","ball"],
+
+output:
+[
+  [ "wall",
+    "area",
+    "lead",
+    "lady"
+  ],
+  [ "ball",
+    "area",
+    "lead",
+    "lady"
+  ]
+]
+
+2. Autocomplete search suggestion
+
+3. Search Word by prefix and suffix
+
+4. palindrome pairs
+   Input: words = ["abcd","dcba","lls","s","sssll"]
+   Output: [[0,1],[1,0],[3,2],[2,4]]
+   Explanation: The palindromes are ["abcddcba","dcbaabcd","slls","llssssll"]
+
+
+5. Input: words = ["cat","cats","catsdogcats","dog","dogcatsdog","hippopotamuses","rat","ratcatdogcat"]
+   Output: ["catsdogcats","dogcatsdog","ratcatdogcat"]
+   Explanation: "catsdogcats" can be concatenated by "cats", "dog" and "cats";
+   "dogcatsdog" can be concatenated by "dog", "cats" and "dog";
+   "ratcatdogcat" can be concatenated by "rat", "cat", "dog" and "cat".
+
+

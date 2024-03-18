@@ -71,5 +71,29 @@ public class CollectionInput {
             System.out.println("Key: " + entry.getKey() + ", Value: " + entry.getValue());
         }
 
+        /*
+        computeIfAbsent:
+        This method computes a new value for the specified key if the key is not already associated with a value (or is mapped to null),
+        and enters it into the map.
+      */
+        // Compute a new value if the key is absent
+        hashMap.computeIfAbsent("key1", (key) -> {
+            System.out.println(key);
+            return "Three";
+        });
+        // Display the updated map
+        System.out.println(hashMap); // Output: {1=One, 2=Two, 3=Three}
+
+       /*
+        computeIfPresent:
+        This method computes a new mapping for the specified key if the key is
+         present and its current value satisfies the given condition.
+        */
+
+        // Compute a new value if the key is present
+        hashMap.computeIfPresent("key", (key, value) -> value + " Updated");
+        // Display the updated map
+        System.out.println(hashMap); // Output: {1=One, 2=Two Updated}
+
     }
 }
