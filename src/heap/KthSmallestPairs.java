@@ -8,13 +8,11 @@ import java.util.PriorityQueue;
 public class KthSmallestPairs {
 
     public static List<List<Integer>> kSmallestPairs(int[] nums1, int[] nums2, int k) {
-
-        final PriorityQueue<List<Integer>> pq = new PriorityQueue<>((a, b) -> Integer.compare(b.get(0) + b.get(1), a.get(0) + a.get(1)));
+        final PriorityQueue<List<Integer>> pq = new PriorityQueue<>((a, b) -> Integer.compare(b.getFirst() + b.get(1), a.getFirst() + a.get(1)));
         List<List<Integer>> result = new ArrayList<>();
-
-        for (int i = 0; i < nums1.length; i++) {
-            for (int j = 0; j < nums2.length; j++) {
-                pq.add(new ArrayList<>(Arrays.asList(nums1[i], nums2[j])));
+        for (int value1 : nums1) {
+            for (int value2 : nums2) {
+                pq.add(new ArrayList<>(Arrays.asList(value1, value2)));
                 if (pq.size() > k) {
                     pq.poll();
                 }
@@ -24,16 +22,13 @@ public class KthSmallestPairs {
         while (!pq.isEmpty()) {
             result.add(pq.poll());
         }
-
         return result;
-
     }
 
     public static void main(String[] args) {
         int[] nums1 = {1, 7, 11};
         int[] nums2 = {2, 4, 6};
         int k = 3;
-
         System.out.println(kSmallestPairs(nums1, nums2, k));
     }
 
