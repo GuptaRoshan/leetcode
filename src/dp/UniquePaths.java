@@ -4,7 +4,6 @@ public class UniquePaths {
     public static int uniquePaths(int m, int n) {
         // Create a 2D array to store the number of unique paths
         int[][] dp = new int[m][n];
-
         // Initialize the top row and left column to 1 (only one way to reach each cell in the top row or left column)
         for (int i = 0; i < m; i++) {
             dp[i][0] = 1;
@@ -12,7 +11,6 @@ public class UniquePaths {
         for (int j = 0; j < n; j++) {
             dp[0][j] = 1;
         }
-
         // Build the DP table by summing the paths from the cell above and the cell to the left
         for (int i = 1; i < m; i++) {
             for (int j = 1; j < n; j++) {

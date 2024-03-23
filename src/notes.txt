@@ -80,7 +80,7 @@ TYPES OF PROBLEMS IN DP
 -------------------------------------------------------------------------------------------------------------------------------
 
 1. Linear Dp  :
-This type of questions are easy to figure out. You just need to find the repetitive part of solution and improve it by saving its result somewhere.
+This type of question are easy to figure out. You just need to find the repetitive part of solution and improve it by saving its result somewhere.
 A classical example is fibonacci series.
 
 2. String and Dp :
@@ -106,7 +106,7 @@ Solve some problems in this list you will realize bits are so powerful.
 These are rare in interview, so one can start this list accordingly. But if you are a math lover, its a great category.
 
 6. Classical dp problems  :
-Its a must do list. It consists many direct interview question.
+Its a must-do list. It consists many direct interview question.
 You will find them as it is. Also these question are base to your understanding.
 It will help in logic building in contests too. I suggest solve these problems several times. Its like Inception movie.
 
