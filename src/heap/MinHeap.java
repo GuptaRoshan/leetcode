@@ -159,10 +159,10 @@ class Test {
         System.out.println(minHeap.insertKey(10));
         System.out.println(minHeap.insertKey(20));
         System.out.println(minHeap.insertKey(15));
-        System.out.println(minHeap.extractMin()); // 10
-        System.out.println(minHeap.extractMin()); // 15
         System.out.println(minHeap.insertKey(100));
         System.out.println(minHeap.insertKey(200));
+        System.out.println(minHeap.extractMin()); // 10
+        System.out.println(minHeap.extractMin()); // 15
         System.out.println(minHeap.extractMin()); // 20
     }
 }
