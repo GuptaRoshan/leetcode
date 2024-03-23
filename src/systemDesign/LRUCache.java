@@ -97,7 +97,7 @@ class LRUCache<S, T> {
     public LRUCache(int cacheSize) {
         this.cacheSize = cacheSize;
         this.cacheMap = new ConcurrentHashMap<>();
-        this.doublyLinkedList = new DoublyLinkedList();
+        this.doublyLinkedList = new DoublyLinkedList<>();
     }
 
     void addItem(S key, T value) {
