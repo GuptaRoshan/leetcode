@@ -1,6 +1,7 @@
 package graph;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Stack;
 
@@ -65,6 +66,6 @@ public class CourseSchedule2DFS {
     public static void main(String[] args) {
         int numCourses = 4;
         int[][] prerequisites = {{3, 0}, {0, 1}};
-        System.out.println(findOrder(numCourses, prerequisites));
+        System.out.println(Arrays.toString(findOrder(numCourses, prerequisites)));
     }
 }

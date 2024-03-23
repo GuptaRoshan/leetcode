@@ -1,6 +1,6 @@
 Total prefix and suffix of apple
 
-Prefix : start from first and exclude last element
+PREFIX : start from first and exclude last element
 
 1. "apple"
 2. "a"
@@ -9,7 +9,7 @@ Prefix : start from first and exclude last element
 5. "appl"
 
 
-Suffix : start from last exclude first element
+SUFFIX : start from last exclude first element
 
 1. "apple"
 2. "e"

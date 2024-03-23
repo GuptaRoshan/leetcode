@@ -1,5 +1,6 @@
 package graph;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -10,15 +11,14 @@ public class CourseSchedule {
         int[][] matrix = new int[n][n];
         int[] inDegree = new int[n];
 
-        for (int i = 0; i < prerequisites.length; i++) {
-            int course = prerequisites[i][0];
-            int pre = prerequisites[i][1];
+        for (int[] prerequisite : prerequisites) {
+            int course = prerequisite[0];
+            int pre = prerequisite[1];
             matrix[pre][course] = 1;
             inDegree[course]++;
         }
 
         Queue<Integer> queue = new LinkedList<>();
-
         for (int i = 0; i < inDegree.length; i++) {
             if (inDegree[i] == 0) queue.add(i);
         }
@@ -80,7 +80,7 @@ public class CourseSchedule {
     public static void main(String[] args) {
         int numCourses = 1;
         int[][] prerequisites = new int[0][0];
-        System.out.println(findOrder(numCourses, prerequisites));
+        System.out.println(Arrays.toString(findOrder(numCourses, prerequisites)));
     }
 
 

@@ -1,9 +1,0 @@
- Programming Prompt
-
- 1. Scan the following code for potential problems
- 2. Evaluate the following code and look for performance issues < followed by the code in question >
- 3. Write a test for the following { language } code < followed by the code in question >
- 4. Explain how {something} works in {language}.
- 5. What is the correct syntax to {do something} in { language }?
-
-
