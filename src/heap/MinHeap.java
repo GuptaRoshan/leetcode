@@ -57,19 +57,15 @@ class MinHeap {
         return true;
     }
 
-    // heapifyUp Iterative
-    // heapifyUp is used during insertion of a new element in the heap
-    public void heapifyUp(int lastElementIndex) {
-        int parentIndex = this.parent(lastElementIndex);
-        while (lastElementIndex != 0 && heap[lastElementIndex] < heap[parentIndex]) {
-            swap(heap, lastElementIndex, parentIndex);
-            lastElementIndex = parentIndex;
-        }
-    }
 
-    // heapifyUp Recursive
+    /**
+     * Heapify Up Recursive
+     *
+     * @param array The array to be heapified
+     * @param index Last element index
+     */
     public void heapifyUp(int[] array, int index) {
-        // Base case: Reached the root
+        // If the index is 0, then the element is the root
         if (index == 0) {
             return;
         }
@@ -83,6 +79,18 @@ class MinHeap {
             heapifyUp(array, parentIndex);
         }
     }
+
+   /*
+    // heapifyUp Iterative
+    // heapifyUp is used during insertion of a new element in the heap
+    public void heapifyUp(int lastElementIndex) {
+        int parentIndex = this.parent(lastElementIndex);
+        while (lastElementIndex != 0 && heap[lastElementIndex] < heap[parentIndex]) {
+            swap(heap, lastElementIndex, parentIndex);
+            lastElementIndex = parentIndex;
+        }
+    }
+    */
 
     // ----------------------------------------------------------------------//
 
@@ -103,10 +111,36 @@ class MinHeap {
         int root = heap[0];
         heap[0] = heap[currentHeapCapacity - 1];
         currentHeapCapacity--;
-        heapifyDown(heap,0);
+        heapifyDown(heap, 0);
 
         return root;
     }
+
+
+    /**
+     * Heapify Down Recursive
+     *
+     * @param array The array to be heapified
+     * @param index Root index
+     */
+    private void heapifyDown(int[] array, int index) {
+        int l = left(index);
+        int r = right(index);
+
+        int smallest = index;
+        if (l < currentHeapCapacity && array[l] < array[smallest]) {
+            smallest = l;
+        }
+        if (r < currentHeapCapacity && array[r] < array[smallest]) {
+            smallest = r;
+        }
+        if (smallest != index) {
+            swap(array, index, smallest);
+            heapifyDown(array, smallest);
+        }
+    }
+
+    /*
 
     // heapifyDown Iterative
     private void heapifyDown(int index) {
@@ -131,24 +165,8 @@ class MinHeap {
         }
     }
 
+  */
 
-    // heapifyDown Recursive
-    private void heapifyDown(int[] array, int index) {
-        int l = left(index);
-        int r = right(index);
-
-        int smallest = index;
-        if (l < currentHeapCapacity && array[l] < array[smallest]) {
-            smallest = l;
-        }
-        if (r < currentHeapCapacity && array[r] < array[smallest]) {
-            smallest = r;
-        }
-        if (smallest != index) {
-            swap(array, index, smallest);
-            heapifyDown(array, smallest);
-        }
-    }
 
 }
 
