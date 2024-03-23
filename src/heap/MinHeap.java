@@ -12,25 +12,45 @@ class MinHeap {
         currentHeapCapacity = 0;
     }
 
-
+    /**
+     * Swap the elements in the array
+     *
+     * @param arr The array
+     * @param a   First element index
+     * @param b   Second element index
+     */
     private void swap(int[] arr, int a, int b) {
         int temp = arr[a];
         arr[a] = arr[b];
         arr[b] = temp;
     }
 
-
-    // Get the Parent index for the given index : (i-1) / 2
+    /**
+     * Get the Parent index for the given index : (i-1) / 2
+     *
+     * @param key index of the element
+     * @return index of the parent element
+     */
     private int parent(int key) {
         return (key - 1) / 2;
     }
 
-    // Get the Left Child index for the given index :  (2 * i) + 1
+    /**
+     * Get the Left Child index for the given index :  (2 * i) + 1
+     *
+     * @param key index of the element
+     * @return index of the left child
+     */
     private int left(int key) {
         return (2 * key) + 1;
     }
 
-    // Get the Right Child index for the given index : (2 * i) + 2
+    /**
+     * Get the Right Child index for the given index :  (2 * i) + 2
+     *
+     * @param key index of the element
+     * @return index of the right child
+     */
     private int right(int key) {
         return (2 * key) + 2;
     }
@@ -40,6 +60,8 @@ class MinHeap {
     /**
      * 1. Insert the new key at the end
      * 2. Fix the min heap property if it is violated : heapify Up
+     *
+     * @param key The key to be inserted
      */
     public boolean insertKey(int key) {
         // Edge case when the heap is full
@@ -80,22 +102,12 @@ class MinHeap {
         }
     }
 
-   /*
-    // heapifyUp Iterative
-    // heapifyUp is used during insertion of a new element in the heap
-    public void heapifyUp(int lastElementIndex) {
-        int parentIndex = this.parent(lastElementIndex);
-        while (lastElementIndex != 0 && heap[lastElementIndex] < heap[parentIndex]) {
-            swap(heap, lastElementIndex, parentIndex);
-            lastElementIndex = parentIndex;
-        }
-    }
-    */
-
-    // ----------------------------------------------------------------------//
-
-    // Replace the last element with root, and delete it.
-    // Fix the min heap property if it is violated : heapify Down
+    /**
+     * 1. Replace the last element with root, and delete it.
+     * 2. Fix the min heap property if it is violated : heapify Down
+     *
+     * @return The minimum element from the heap
+     */
     public int extractMin() {
         // Edge cases when there is no element
         if (currentHeapCapacity <= 0) {
@@ -139,47 +151,18 @@ class MinHeap {
             heapifyDown(array, smallest);
         }
     }
-
-    /*
-
-    // heapifyDown Iterative
-    private void heapifyDown(int index) {
-        while (index < currentHeapCapacity) {
-            int smallest = index;
-            int leftChild = left(index);
-            int rightChild = right(index);
-
-            if (leftChild < currentHeapCapacity && heap[leftChild] < heap[smallest]) {
-                smallest = leftChild;
-            }
-
-            if (rightChild < currentHeapCapacity && heap[rightChild] < heap[smallest]) {
-                smallest = rightChild;
-            }
-            if (smallest != index) {
-                swap(heap, index, smallest);
-                index = smallest;
-            } else {
-                break;
-            }
-        }
-    }
-
-  */
-
-
 }
 
 class Test {
     public static void main(String[] args) {
         MinHeap minHeap = new MinHeap(10);
-        minHeap.insertKey(10);
-        minHeap.insertKey(20);
-        minHeap.insertKey(15);
+        System.out.println(minHeap.insertKey(10));
+        System.out.println(minHeap.insertKey(20));
+        System.out.println(minHeap.insertKey(15));
         System.out.println(minHeap.extractMin()); // 10
         System.out.println(minHeap.extractMin()); // 15
-        minHeap.insertKey(20);
-        minHeap.insertKey(100);
+        System.out.println(minHeap.insertKey(100));
+        System.out.println(minHeap.insertKey(200));
         System.out.println(minHeap.extractMin()); // 20
     }
 }
