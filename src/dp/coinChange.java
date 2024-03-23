@@ -8,13 +8,13 @@ public class coinChange {
     public static int coinChanges(int[] coins, int amount) {
         int maxAmount = amount + 1;
         int[] dp = new int[maxAmount];
-        Arrays.fill(dp, maxAmount);
+        Arrays.fill(dp, Integer.MAX_VALUE);
         dp[0] = 0;
 
         for (int i = 1; i <= amount; i++) {
             for (int coin : coins) {
                 if (coin <= i) {
-                    // Count of remaining dp[i - coin] and +1 for the current coin
+                    // Count of remaining dp[i - coin] and + 1 for the current coin
                     dp[i] = Math.min(dp[i], dp[i - coin] + 1);
                 }
             }

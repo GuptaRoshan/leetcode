@@ -1,0 +1,121 @@
+Data structures you are going to need are -
+
+1. Arrays
+2. Stacks
+3. Queues
+4. Linked Lists
+5. Hash Tables
+6. Trees and BST
+7. Graphs
+8. Disjoint sets
+9. Trie
+10. Heaps
+11. Priority Queues
+
+
+An algorithmic paradigm is a framework which underlies the design of a class of algorithms.
+
+1. Backtracking
+2. Branch and bound
+3. Brute-force search
+4. Divide and conquer
+5. Dynamic programming
+6. Greedy algorithm
+7. Prune and search
+--------------------------------------------------------------------------------
+
+
+
+DYNAMIC PROGRAMMING
+--------------------------------------------------------------------------------
+
+1. Top-down DP (Memoization):-
+This approach starts with the original problem and breaks it down into smaller subproblems RECURSIVELY.
+
+
+2. Bottom-up DP (Tabulation):-
+In this approach, the problem is solved by ITERATIVELY filling up a table or array with solutions to subproblems starting from the smallest subproblems.
+
+
+3. Optimal Substructure and Overlapping Sub problems:-
+A problem has an optimal substructure if an optimal solution can be constructed from optimal solutions of its subproblems.
+A problem has overlapping problems if it can be broken down into subproblems which are reused several times.
+
+
+In this recursive implementation of fibonacci(10), you can see that there are overlapping subproblems (e.g., fibonacci(3) is called multiple times).
+Also, the problem exhibits optimal substructure because the optimal solution to fibonacci(n) relies on the optimal solutions to fibonacci(n-1) and fibonacci(n-2).
+
+
+4. State Transition:-
+The state transition in dynamic programming is the process of figuring out how to build up the solution to the original problem from solutions to its subproblems.
+
+
+5. 1D, 2D, or Higher Dimensional DP:-
+Dynamic programming problems can be solved using a 1D, 2D, or higher dimensional array.
+
+
+6. Multistage DP:-
+Multistage DP is a variant of dynamic programming where the problem can be broken down into multiple stages,
+and the solution to a stage depends on the solutions of the previous stages.
+
+
+7. DP on Trees:-
+Dynamic programming can be applied to tree structures. In this case, the tree is usually traversed in a bottom-up manner.
+
+
+8. DP on Grids:-
+Dynamic programming can be applied to grid-based problems. In this case, the grid is usually traversed in a top-down or bottom-up manner.
+
+
+9. DP on Strings:-
+Dynamic programming can be applied to string-based problems. In this case, the string is usually traversed in a left-to-right or right-to-left manner.
+
+
+10 Subset DP:-
+This variant is used when the problem involves finding an optimal subset or combination that satisfies certain constraints.
+
+
+
+TYPES OF PROBLEMS IN DP
+-------------------------------------------------------------------------------------------------------------------------------
+
+1. Linear Dp  :
+This type of questions are easy to figure out. You just need to find the repetitive part of solution and improve it by saving its result somewhere.
+A classical example is fibonacci series.
+
+2. String and Dp :
+In interviews or contests, problems on string are really common and one has to be strong on this.
+To make problem more complex solution requires backtracking or recursion, after that dp can be applied to optimize further.
+
+3. Dp with Tree and Graph  :
+Tree and Graph are mainly based of DFS and BFS. Its very rare to see some direct relation with dp.
+But for best understanding one should practise hard with BFS, DFS and other direct graph based algo. Then you can provide some advance solution with dp.
+I would recommend to start with problem Cheapest Flights Within K Stops ( problem 787).
+
+4. Knapsack based Dp :
+Solution is built upon subset, but with few more restrictions.
+For example, you want to complete some courses, they have some reward points associated.
+But you can attend only k number of courses. Now try to maximize your points.
+This type of problems are just extension to simple dp, where you add one more dimension to consider provided restriction.
+
+4. Dp with bits manipulation :
+Usually we create array or map to store computed state. But Some problems may need you to save space further more by just encoding state and its result into bits.
+Solve some problems in this list you will realize bits are so powerful.
+
+5. Dp on math problems :
+These are rare in interview, so one can start this list accordingly. But if you are a math lover, its a great category.
+
+6. Classical dp problems  :
+Its a must do list. It consists many direct interview question.
+You will find them as it is. Also these question are base to your understanding.
+It will help in logic building in contests too. I suggest solve these problems several times. Its like Inception movie.
+
+7. Grid based dp :
+Grid based questions are easy to solve. It just requires practise.
+
+8. Multidimensional Dp :
+This is an extension to simple dp. You just need to add one more dimension to your dp array.
+
+9. Digit problems with dp :
+
+10. Interval problems with dp :
