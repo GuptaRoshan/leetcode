@@ -36,6 +36,7 @@ class DoublyLinkedList<T> {
         this.tail = null;
     }
 
+
     void add(T value) {
         DoublyNode<T> newNode = new DoublyNode<>(value);
         if (this.tail == null) {
