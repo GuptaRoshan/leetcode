@@ -8,7 +8,7 @@ public class MiddleElement {
             slow = slow.next;
             fast = fast.next.next;
         }
-        return slow.data;
+        return (slow != null) ? slow.data : Integer.MIN_VALUE;
     }
 
     public static void main(String[] args) {
@@ -18,7 +18,6 @@ public class MiddleElement {
         linkedList.addInTail(7);
         linkedList.addInTail(8);
         linkedList.printList(linkedList.head);
-        System.out.println();
-        System.out.println("Middle element : " + middle(linkedList.head));
+        System.out.println("Middle element  : " + middle(linkedList.head));
     }
 }

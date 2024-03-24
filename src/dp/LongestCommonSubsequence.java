@@ -1,9 +1,14 @@
 package dp;
 
-// Different problems : https://leetcode.com/discuss/study-guide/4861127/LCS-and-its-patterns-(10-similar-question)
 public class LongestCommonSubsequence {
-
-    // Video Link : https://www.youtube.com/watch?v=e9tUPwZZSBI&ab_channel=NikhilLohia
+    /**
+     * Video Link : <a href="https://www.youtube.com/watch?v=e9tUPwZZSBI&ab_channel=NikhilLohia">...</a>
+     * Different problems : <a href="https://leetcode.com/discuss/study-guide/4861127/LCS-and-its-patterns-(10-similar-question)">...</a>
+     *
+     * @param str1 string 1
+     * @param str2 String 2
+     * @return longest common subsequence length in str1 and str2
+     */
     public static int findLCSLength(String str1, String str2) {
         int m = str1.length();
         int n = str2.length();
@@ -26,10 +31,9 @@ public class LongestCommonSubsequence {
     }
 
     public static void main(String[] args) {
-        //output should be 4 (BDAB)
         String str1 = "ABCBDAB";
         String str2 = "BDCAB";
-        int length = findLCSLength(str1, str2);
-        System.out.println("Length of Longest Common Subsequence: " + length);
+        // Output: 4 (BCAB)
+        System.out.println("Length of Longest Common Subsequence: " + findLCSLength(str1, str2));
     }
 }

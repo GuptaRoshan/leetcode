@@ -3,11 +3,10 @@ package linkedList;
 public class MergeTwoSortedLinkedList {
 
     public static Node mergeTwoLists(Node list1, Node list2) {
-
         Node dummy = new Node(0);
         Node curr = dummy;
-
-        while (list1 != null && list1 != null) {
+        while (list1 != null && list2 != null) {
+            
             if (list1.data <= list2.data) {
                 curr.next = list1;
                 list1 = list1.next;
